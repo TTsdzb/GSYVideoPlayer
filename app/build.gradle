@@ -6,7 +6,7 @@ apply from: "../gradle/exported.gradle"
 android {
     defaultConfig {
         applicationId "com.example.gsyvideoplayer"
-        versionCode 21
+        versionCode 22
         versionName PROJ_VERSION
 
         multiDexEnabled true
@@ -41,10 +41,10 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-
-    lintOptions {
+    lint {
         abortOnError false
     }
+
 }
 
 dependencies {
@@ -56,6 +56,7 @@ dependencies {
     implementation viewDependencies.glide
     implementation androidDependencies.design
     implementation androidDependencies.viewpager2
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     implementation project(":gsyVideoPlayer")
     implementation project(":gsyVideoPlayer-aliplay")
